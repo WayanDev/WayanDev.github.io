@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Landing Page Sederhana — Nama Produk</title>
+  <meta name="description" content="Landing page sederhana yang di-deploy ke GitHub Pages (username.github.io)">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#06b6d4}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto, 'Helvetica Neue',Arial; margin:0;background:linear-gradient(180deg,#071020 0%, #071423 100%);color:#e6eef8;line-height:1.45}
+    .container{max-width:980px;margin:48px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{width:44px;height:44px;background:linear-gradient(135deg,var(--accent),#60a5fa);border-radius:10px;display:grid;place-items:center;font-weight:700;color:#04202a}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr;gap:22px;align-items:center;margin-top:40px}
+    .title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700}
+    .lead{color:var(--muted);margin-top:6px}
+    .cta-row{display:flex;gap:12px;margin-top:18px}
+    .btn{background:var(--accent);border:none;padding:12px 18px;border-radius:10px;color:#052126;font-weight:700;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--muted)}
+
+    .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;margin-top:26px}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:18px}
+    .feature{padding:14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);}
+    .feature h4{margin:0 0 6px 0}
+    footer{color:var(--muted);font-size:0.9rem;margin-top:36px;display:flex;justify-content:space-between;align-items:center}
+
+    /* subscribe form */
+    .subscribe{display:flex;gap:10px;max-width:640px}
+    input[type="email"]{flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:inherit}
+
+    @media(min-width:860px){
+      .hero{grid-template-columns:1fr 420px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">LP</div>
+        <div>
+          <div style="font-weight:700">Nama Produk</div>
+          <div style="font-size:0.85rem;color:var(--muted)">Tagline singkat yang menarik</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">Fitur</a>
+        <a href="#pricing">Harga</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section>
+        <h1 class="title">Buat landing page sederhana dengan cepat — host gratis di GitHub Pages</h1>
+        <p class="lead">Template ini siap pakai. Ganti teks, gambar, dan tautan. Cocok untuk promosi produk kecil, event, atau portofolio.</p>
+
+        <div class="cta-row">
+          <button class="btn" onclick="location.href='#contact'">Mulai Sekarang</button>
+          <button class="btn secondary" onclick="window.open('https://github.com/new','_blank')">Buat Repo GitHub</button>
+        </div>
+
+        <div class="card">
+          <strong>Keunggulan:</strong>
+          <div class="features" style="margin-top:12px">
+            <div class="feature"><h4>Gratis hosting</h4><div class="muted">GitHub Pages (username.github.io)</div></div>
+            <div class="feature"><h4>Responsive</h4><div class="muted">Tampilan bagus di mobile & desktop</div></div>
+            <div class="feature"><h4>Mudah dikustom</h4><div class="muted">HTML + CSS sederhana</div></div>
+            <div class="feature"><h4>SSL otomatis</h4><div class="muted">HTTPS tersedia di GitHub Pages</div></div>
+          </div>
+        </div>
+
+        <section id="features">
+          <h3 style="margin-top:22px">Fitur singkat</h3>
+          <ul style="color:var(--muted)">
+            <li>Hero section dengan CTA</li>
+            <li>Form subscribe sederhana (mailto fallback)</li>
+            <li>Layout responsive menggunakan CSS Grid</li>
+          </ul>
+        </section>
+
+      </section>
+
+      <aside class="card">
+        <h3>Daftar & Subscribe</h3>
+        <p style="color:var(--muted);margin-top:6px">Masukkan emailmu untuk mendapatkan info.</p>
+
+        <!--
+          Form default: mailto fallback. Untuk form riil, ganti atribut "action" dengan endpoint Formspree atau Netlify Forms.
+          Contoh Formspree: action="https://formspree.io/f/your-id" method="POST"
+        -->
+        <form id="subscribeForm" action="mailto:example@example.com" method="GET">
+          <div class="subscribe" style="margin-top:12px">
+            <input id="email" type="email" placeholder="email@contoh.com" required>
+            <button class="btn" type="submit">Kirim</button>
+          </div>
+        </form>
+
+        <hr style="margin:16px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+        <h4 id="pricing">Harga</h4>
+        <p style="color:var(--muted);margin-top:6px">Mulai gratis. Upgrade domain/custom domain jika ingin domain sendiri.</p>
+
+        <div style="margin-top:12px">
+          <strong>Butuh bantuan?</strong>
+          <div style="color:var(--muted);margin-top:8px">Hubungi: <a href="mailto:hello@contoh.com" style="color:var(--accent);text-decoration:none">hello@contoh.com</a></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>&copy; <span id="year"></span> Nama Produk</div>
+      <div>Made with ❤️ — Hosted on GitHub Pages</div>
+    </footer>
+  </div>
+
+  <script>
+    // simple year injection
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Basic client-side validation + UX for the mailto fallback
+    document.getElementById('subscribeForm').addEventListener('submit', function(e){
+      var email = document.getElementById('email').value.trim();
+      if(!email){
+        e.preventDefault();
+        alert('Masukkan email yang valid.');
+        return;
+      }
+      // If form action is mailto, allow default (will open email client)
+      // If you integrate Formspree, the form will POST to their endpoint.
+    });
+  </script>
+</body>
+</html>
